@@ -1,0 +1,91 @@
+[25-Sep-2024 02:54:02 Asia/Ho_Chi_Minh] Error: Template not found: errors.419
+In file: /home/gacmai/public_html/kd.gacmai.vn/vendor/eftec/bladeone/lib/BladeOne.php
+On line: 1390
+Context: function logError
+Caught in file: /home/gacmai/public_html/kd.gacmai.vn/app/Helper/helper.php
+On line: 130
+ ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ ERROR LOG ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+[25-Sep-2024 02:54:02 Asia/Ho_Chi_Minh] Error: Template not found: errors.405
+In file: /home/gacmai/public_html/kd.gacmai.vn/vendor/eftec/bladeone/lib/BladeOne.php
+On line: 1390
+Context: function logError
+Caught in file: /home/gacmai/public_html/kd.gacmai.vn/app/Helper/helper.php
+On line: 130
+ ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ ERROR LOG ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+[25-Sep-2024 08:14:10 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined function dateTimeFormat() in /home/gacmai/public_html/kd.gacmai.vn/storage/framework/views/orders.show_9e322a39ce292e769be630f417119ab988437a35.bladec:45
+Stack trace:
+#0 /home/gacmai/public_html/kd.gacmai.vn/vendor/eftec/bladeone/lib/BladeOne.php(1575): include()
+#1 /home/gacmai/public_html/kd.gacmai.vn/vendor/eftec/bladeone/lib/BladeOne.php(1248): eftec\bladeone\BladeOne->evaluatePath('/home/gacmai/pu...', Array)
+#2 /home/gacmai/public_html/kd.gacmai.vn/vendor/eftec/bladeone/lib/BladeOne.php(2134): eftec\bladeone\BladeOne->runInternal('orders.show', Array, false, false)
+#3 /home/gacmai/public_html/kd.gacmai.vn/config/blade.php(43): eftec\bladeone\BladeOne->run('orders.show', Array)
+#4 /home/gacmai/public_html/kd.gacmai.vn/app/Helper/helper.php(8): Blade->render('orders.show', Array)
+#5 /home/gacmai/public_html/kd.gacmai.vn/app/Http/Controllers/WEB/OrderController.php(23): view('orders.show', Array)
+#6 [internal function]: App\Http\Controllers\WEB\OrderController->show('8')
+# in /home/gacmai/public_html/kd.gacmai.vn/storage/framework/views/orders.show_9e322a39ce292e769be630f417119ab988437a35.bladec on line 45
+[25-Sep-2024 17:28:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gacmai_code.provinces' doesn't exist in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php:368
+Stack trace:
+#0 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(368): PDO->prepare('select * from `...')
+#1 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(705): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(672): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(376): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\Database\Connection->select('select * from in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php on line 712
+[25-Sep-2024 17:29:51 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'province.id' in 'where clause' in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php:368
+Stack trace:
+#0 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(368): PDO->prepare('select * from `...')
+#1 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(705): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(672): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(376): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\Database\Connection->select('select * from `...', A in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php on line 712
+[25-Sep-2024 17:30:19 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'province.id' in 'where clause' in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php:368
+Stack trace:
+#0 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(368): PDO->prepare('select * from `...')
+#1 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(705): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(672): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(376): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\Database\Connection->select('select * from `...', A in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php on line 712
+[25-Sep-2024 17:31:26 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'province.id' in 'where clause' in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php:368
+Stack trace:
+#0 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(368): PDO->prepare('select * from `...')
+#1 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(705): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(672): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(376): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\Database\Connection->select('select * from `...', A in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php on line 712
+[25-Sep-2024 17:31:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'province.id' in 'where clause' in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php:368
+Stack trace:
+#0 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(368): PDO->prepare('select * from `...')
+#1 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(705): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(672): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(376): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\Database\Connection->select('select * from `...', A in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php on line 712
+[25-Sep-2024 17:32:17 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'province.id' in 'where clause' in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php:368
+Stack trace:
+#0 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(368): PDO->prepare('select * from `...')
+#1 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(705): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(672): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(376): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\Database\Connection->select('select * from `...', A in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php on line 712
+[25-Sep-2024 19:32:16 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'note' in 'field list' in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php:495
+Stack trace:
+#0 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(495): PDO->prepare('insert into `cu...')
+#1 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(705): Illuminate\Database\Connection->Illuminate\Database\{closure}('insert into `cu...', Array)
+#2 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(672): Illuminate\Database\Connection->runQueryCallback('insert into `cu...', Array, Object(Closure))
+#3 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(502): Illuminate\Database\Connection->run('insert into `cu...', Array, Object(Closure))
+#4 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(454): Illuminate\Database\Connection->statement('insert into `cu...', Array)
+#5 / in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php on line 712
+[25-Sep-2024 19:43:36 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gacmai_code.type_logs' doesn't exist in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php:368
+Stack trace:
+#0 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(368): PDO->prepare('select * from `...')
+#1 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(705): Illuminate\Database\Connection->Illuminate\Database\{closure}('select * from `...', Array)
+#2 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(672): Illuminate\Database\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#3 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php(376): Illuminate\Database\Connection->run('select * from `...', Array, Object(Closure))
+#4 /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Query/Builder.php(2414): Illuminate\Database\Connection->select('select * from in /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php on line 712
+[25-Sep-2024 19:47:53 Asia/Ho_Chi_Minh] Error: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'content' cannot be null (SQL: insert into `customer_logs` (`customer_id`, `user_id`, `content`, `created_at`) values (17, 1, ?, 2024-09-25 19:47:53))
+In file: /home/gacmai/public_html/kd.gacmai.vn/vendor/illuminate/database/Connection.php
+On line: 712
+Context: function logError
+Caught in file: /home/gacmai/public_html/kd.gacmai.vn/app/Http/Controllers/API/CustomerController.php
+On line: 118
+ ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ ERROR LOG ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+

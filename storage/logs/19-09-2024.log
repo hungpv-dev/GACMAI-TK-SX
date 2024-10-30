@@ -1,0 +1,347 @@
+[19-Sep-2024 00:15:59 Asia/Ho_Chi_Minh] [ERROR] [2] compact(): Argument #1 must be string or array of strings, Illuminate\Support\Collection given - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:15
+
+[19-Sep-2024 00:17:02 Asia/Ho_Chi_Minh] [ERROR] [2] compact(): Argument #1 must be string or array of strings, Illuminate\Support\Collection given - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:15
+
+[19-Sep-2024 00:17:16 Asia/Ho_Chi_Minh] [ERROR] [2] compact(): Argument #1 must be string or array of strings, Illuminate\Support\Collection given - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:15
+
+[19-Sep-2024 00:17:22 Asia/Ho_Chi_Minh] [ERROR] [2] compact(): Argument #1 must be string or array of strings, Illuminate\Support\Collection given - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:15
+
+[19-Sep-2024 00:18:01 Asia/Ho_Chi_Minh] [ERROR] [2] compact(): Argument #1 must be string or array of strings, Illuminate\Support\Collection given - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:15
+
+[19-Sep-2024 00:18:01 Asia/Ho_Chi_Minh] [ERROR] [2] Undefined variable $chartAllGroup - /home/hungpv/Desktop/Workspace/kd.duanmoi/storage/framework/views/home_9b076b8e1c4475f8635b7460e8eda9e813b8d688.bladec:11
+
+[19-Sep-2024 00:21:21 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:21:21 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:21:40 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:21:40 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:21:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:21:41 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:21:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:21:41 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:21:41 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:21:41 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:21:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:21:42 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:21:42 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:21:42 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:21:43 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:21:43 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:22:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:22:28 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:22:28 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:22:28 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:22:29 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:22:29 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:22:29 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:22:29 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:22:29 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:22:29 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:22:29 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:22:29 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:22:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:22:39 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:22:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:22:39 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:22:39 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 30
+[19-Sep-2024 00:22:39 Asia/Ho_Chi_Minh] [SHUTDOWN ERROR] [1] Uncaught ArgumentCountError: Too few arguments to function App\Http\Controllers\WEB\HomeController::chartListUser(), 0 passed in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php on line 15 and exactly 1 expected in /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+Stack trace:
+#0 /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php(15): App\Http\Controllers\WEB\HomeController->chartListUser()
+#1 [internal function]: App\Http\Controllers\WEB\HomeController->index()
+#2 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(55): call_user_func_array()
+#3 /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php(22): App\Http\Kernel->routeNavigation()
+#4 /home/hungpv/Desktop/Workspace/kd.duanmoi/index.php(34): App\Http\Kernel->handle()
+#5 {main}
+  thrown - /home/hungpv/Desktop/Workspace/kd.duanmoi/app/Http/Controllers/WEB/HomeController.php:30
+
+[19-Sep-2024 00:36:07 Asia/Ho_Chi_Minh] [ERROR] [8192] Method ReflectionParameter::getClass() is deprecated - /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php:48
+
+[19-Sep-2024 00:36:07 Asia/Ho_Chi_Minh] [ERROR] [8192] Method ReflectionParameter::getClass() is deprecated - /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php:48
+
+[19-Sep-2024 00:36:11 Asia/Ho_Chi_Minh] [ERROR] [8192] Method ReflectionParameter::getClass() is deprecated - /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php:48
+
+[19-Sep-2024 00:36:11 Asia/Ho_Chi_Minh] [ERROR] [8192] Method ReflectionParameter::getClass() is deprecated - /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php:48
+
+[19-Sep-2024 00:36:11 Asia/Ho_Chi_Minh] [ERROR] [8192] Method ReflectionParameter::getClass() is deprecated - /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php:48
+
+[19-Sep-2024 00:36:11 Asia/Ho_Chi_Minh] [ERROR] [8192] Method ReflectionParameter::getClass() is deprecated - /home/hungpv/Desktop/Workspace/kd.duanmoi/bootstraps/Traits/HttpRequest.php:48
+

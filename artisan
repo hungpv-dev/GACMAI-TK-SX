@@ -1,0 +1,13 @@
+
+<?php
+define('BASE_PATH', __DIR__);
+
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/config/artisan.php';
+
+use AsfyCode\Artisan\Artisan;
+
+$artisan = new Artisan();
+
+$artisan->run();
+

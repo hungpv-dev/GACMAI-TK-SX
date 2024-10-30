@@ -1,0 +1,48 @@
+{
+    "name": "asfy-tech/base",
+    "description": "BASE ASFY TECH",
+    "type": "project",
+    "license": "proprietary",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "AsfyCode\\": "bootstraps"
+        },
+        "files": [
+            "config/blade.php",
+            "app/Helper/helper.php",
+            "bootstraps/Utils/BaseClass.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "hungpv",
+            "email": "phamvanhung.dev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0 || ^8.1 || ^7.3",
+        "eftec/bladeone": "^4.13",
+        "vlucas/phpdotenv": "^5.6",
+        "google/apiclient": "^2.14",
+        "symfony/var-dumper": "^5.4",
+        "illuminate/database": "^8.83",
+        "firebase/php-jwt": "^6.10",
+        "phpoffice/phpspreadsheet":"^1.29",
+        "dompdf/dompdf": "^3.0",
+        "asfy-code/artisan": "v1.5.0"
+    },
+    "scripts": {
+        "artisan:install": [
+            "cd vendor/asfy-code/artisan && composer update"
+        ],
+        "pre-autoload-dump": "Google\\Task\\Composer::cleanup"
+    },
+    "extra": {
+        "google/apiclient-services": [
+            "Oauth2"
+        ]
+    }
+}
