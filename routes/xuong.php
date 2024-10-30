@@ -12,7 +12,9 @@ Route::get('/login/callback',[LoginController::class,'googleCallback']);
 Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 
 Route::middleware('auth.xuong')->group(function(){
-    Route::get('/',[HomeController::class,'xuong']);
+    Route::get('/',function(){
+        echo 'đây là module xưởng';
+    });
 });
 
 

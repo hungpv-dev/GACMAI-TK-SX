@@ -127,9 +127,12 @@ class Request
     {
         return new Response();
     }
-    public function host()
+    public function host($http = false)
     {
-        return $_SERVER['HTTP_HOST'] ?? '';
+        $isHttps = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
+        $scheme = $isHttps ? 'https' : 'http';
+        $url = $scheme . '://' . $_SERVER['HTTP_HOST'];
+        return $http ? $url : $_SERVER['HTTP_HOST'];
     }
 
     public function paginate($data,$limit = 50){

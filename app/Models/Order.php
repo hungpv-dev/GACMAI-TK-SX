@@ -24,11 +24,18 @@
         public function ward(){
             return $this->belongsTo(Ward::class,'ward_id');
         }
+        public function category(){
+            return $this->belongsTo(Category::class,'category_id');
+        }
+        
         public function district(){
             return $this->belongsTo(District::class,'district_id');
         }
         public function province(){
             return $this->belongsTo(Province::class,'province_id');
+        }
+        public function user_tk(){
+            return $this->belongsTo(User::class,'rela');
         }
         public function order_logs() {
             return $this->hasMany(OrderLogs::class, 'order_id', 'id');

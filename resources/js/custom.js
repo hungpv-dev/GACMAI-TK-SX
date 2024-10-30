@@ -538,15 +538,18 @@ function time_ago(time) {
 }
 
 const day_between = (date1, date2 = "", format = true) => {
-    if (validateDate(date1)) {
-        return "";
-    }
-    if (date2 === "") {
-        date2 = new Date();
-        date2.setHours(0, 0, 0, 0);
-        date2 = +date2;
-    }
+    // if (validateDate(date1)) {
+    //     return "";
+    // }
+    // if (date2 === "") {
+    //     date2 = new Date();
+    //     date2.setHours(0, 0, 0, 0);
+    //     date2 = +date2;
+    // }
+    // date1 = getDate1(date1);
+    
     date1 = getDate1(date1);
+    date2 = getDate1(date2);
     let onceDay = 60 * 60 * 24;
     let seconds = (date2 - date1) / 1000,
         token = " Ngày";
@@ -568,6 +571,7 @@ const day_between = (date1, date2 = "", format = true) => {
     }
     return rs;
 };
+
 function getResultOfTimeAgo(seconds, list_choice, token) {
     let i = 0,
         format,
@@ -613,21 +617,28 @@ function validateDate(date1) {
     );
 }
 function getDate1(date1) {
-    switch (typeof date1) {
-        case "number":
-            break;
-        case "string":
-            date1 = new Date(date1);
+    if(date1 == "" || date1 == null){
+        date1 = new Date();
             date1.setHours(0, 0, 0, 0);
             date1 = +date1;
-            break;
-        case "object":
-            if (date1.constructor === Date) date1 = date1.getTime();
-            break;
-        default:
-            date1 = new Date();
-            date1.setHours(0, 0, 0, 0);
-            date1 = +date1;
+    }else{
+        switch (typeof date1) {
+            case "number":
+                break;
+            case "string":
+                date1 = new Date(date1);
+                date1.setHours(0, 0, 0, 0);
+                date1 = +date1;
+                break;
+            case "object":
+                if (date1.constructor === Date) date1 = date1.getTime();
+                break;
+            case "":
+            default:
+                date1 = new Date();
+                date1.setHours(0, 0, 0, 0);
+                date1 = +date1;
+        }
     }
     return date1;
 }

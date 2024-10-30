@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TypeDBController;
+use AsfyCode\Utils\Request;
 
 if (!function_exists('view')) {
     function view($view, $data = [])
@@ -213,13 +214,15 @@ if (!function_exists('compact')) {
 if (!function_exists('asset')) {
     function asset($path)
     {
-        return $_ENV['BASE_URL'] . '/public/assets/' . $path;
+        $request = new Request();
+        return $request->host(true) . '/public/assets/' . $path;
     }
 }
 if (!function_exists('public_path')) {
     function public_path($path)
     {
-        return $_ENV['BASE_URL'] . '/public/' . $path;
+        $request = new Request();
+        return $request->host(true) . '/public/' . $path;
     }
 }
 if (!function_exists('root')) {
@@ -233,13 +236,15 @@ if (!function_exists('root')) {
 if (!function_exists('js')) {
     function js($path)
     {
-        return $_ENV['BASE_URL'] . '/resources/js/' . $path . '.js';
+        $request = new Request();
+        return $request->host(true) . '/resources/js/' . $path . '.js';
     }
 }
 if (!function_exists('css')) {
     function css($path)
     {
-        return $_ENV['BASE_URL'] . '/resources/css/' . $path;
+        $request = new Request();
+        return $request->host(true) . '/resources/css/' . $path;
     }
 }
 if (!function_exists('uploads')) {

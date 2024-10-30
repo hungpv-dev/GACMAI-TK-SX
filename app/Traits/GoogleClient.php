@@ -30,11 +30,12 @@ trait GoogleClient
     protected function clientGoogle()
     {
         $redirect_uri = $_ENV['GOOGLE_APP_CALLBACK_URL'];
-        list($client_id,$client_secret) = $this->getGoogleKey();
+        list($client_id,$client_secret,$client_url) = $this->getGoogleKey();
+        $client_url .= $redirect_uri;
         $client = new Google_Client();
         $client->setClientId($client_id);
         $client->setClientSecret($client_secret);
-        $client->setRedirectUri($redirect_uri);
+        $client->setRedirectUri($client_url);
         $client->addScope('email');
         $client->addScope('profile');
         return $client;
@@ -44,13 +45,14 @@ trait GoogleClient
         $client_id = '';
         $client_secret = '';
         $request = new Request();
+        $client_uri = $request->host(true);
         foreach($this->googleKey as $key => $val){
             if($key == $request->host()){
                 $client_id = $_ENV[$val['id']];
                 $client_secret = $_ENV[$val['secret']];
             }
         }
-        return [$client_id, $client_secret];
+        return [$client_id, $client_secret, $client_uri];
     }
 
     public function checkRoles($userId,$roles){

@@ -13,7 +13,7 @@ class AuthMiddleware extends Middleware
 {
     use GoogleClient;
     private $login;
-    private $roles = [6];
+    private $roles = [1,6];
     public function __construct()
     {
         $this->login = new LoginController();
@@ -34,6 +34,7 @@ class AuthMiddleware extends Middleware
                     } else {
                         if ($this->checkRoles($user->id,$this->roles)) {
                             $this->login->setSession($user);
+
                             $user->last_active = now();
                             $user->save();
                         } else {

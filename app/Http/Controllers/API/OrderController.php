@@ -19,9 +19,8 @@ class OrderController extends Controller
 {
     # [GET] /  =>  Danh sách dữ liệu 
     public function index(Request $request)
-    {
+    {   
         $orders = Order::query();
-
         $dates = currentMonth();
         if(!$request->has('nosearchdate')){
             $dates = currentMonth();
@@ -42,36 +41,43 @@ class OrderController extends Controller
         if ($request->has('city_id')) {
             $orders->where('city_id', $request->city_id);
         }
+        if ($request->has('expried')) {
+            $orders->where('du_kien_time','<', now());
+        }
         if ($request->has('customer_id')) {
             $orders->where('customer_id', $request->customer_id);
         }
-        if ($request->has('status')) {
-            $orders->where('status_id', $request->status);
+        if ($request->has('type_status')) {
+            $orders->where('current_status', $request->type_status);
         }
         if ($request->has('nostatus')) {
             $orders->where('status_id','!=', $request->nostatus);
         }
         if ($request->has('user_id')) {
-            $orders->where('user_id', $request->user_id);
+            $orders->where('rela', $request->user_id);
         }
         if ($request->has('group_id')) {
             $orders->whereHas('user', function($query) use ($request) {
                 $query->where('group_id', $request->group_id);
             });
         }
+        
+        if ($request->has('status')) {
+            $orders->where('status_id', $request->status);
+        }
 
-
-        $orders->with([
-            'customer:id,name',
-            'user:id,name,group_id',
-            'user.group',
-            'current_status',
-            'status',
-        ]);
         $data_status = (clone $orders)
         ->rightJoin('order_status', 'order_status.id', '=', 'orders.status_id')
         ->groupBy('orders.status_id')
         ->select(Manager::raw('COUNT(orders.id) as count_order'), 'order_status.*')->get();
+
+        $orders->with([
+            'customer:id,name',
+            'user_tk',
+            'current_status',
+            'status',
+            'category'
+        ]);
 
         $orders->orderBy('created_at', 'desc');
         $response = $request->paginate($orders)->setAttribute(compact('data_status'));
@@ -195,50 +201,20 @@ class OrderController extends Controller
     # [PUT] /update/{id}  =>  Hiển thị form cập nhật 
     public function update($id, Request $request)
     {
-        $validate = $request->validate(
-            [
-                'customer_id' => 'required',
-                'du_kien' => 'required',
-                'province_id' => 'required',
-                'district_id' => 'required',
-                'status_id' => 'required',
-            ],
-            [],
-            [
-                'customer_id' => 'Khách hàng',
-                'du_kien' => 'Dự kiến',
-                'province_id' => 'Tỉnh thành',
-                'district_id' => 'Quận huyện',
-                'status_id' => 'Trạng thái',
-            ]
-        );
-        $errors = $validate->errors();
-        if ($validate->fails()) {
-            return $this->sendResponse($errors, 422);
-        }
         try {
             Manager::beginTransaction();
-            $data = $request->all();
             $order = Order::findOrFail($id);
-            if($request->input('status_id') == status('order_back')){
-                $order->finish_at = now();
-                $order->save();
-            }
-            unset($data['bank_account_id']);
-            unset($data['thu_them']);
-            unset($data['note_giao_dich']);
-            $data['du_kien_time'] = formatDate($request->du_kien_time);
             $orderArray = $order->getAttributes();
-            if($request->status_id == 9){
-                $data['rela'] = $request->input('user_tk',NULL);
-                $data['current_status'] = 16;
-            }else if($request->status_id == 10){
-                $data['rela'] = $request->input('factory_id',NULL);
-                $data['current_status'] = 19;
+            $order->current_status = $request->current_status;
+            if($request->current_status == 18){
+                $order->category_id = $request->category_id;
+            }else{
+                $order->category_id = NULL;
             }
-            unset($data['user_tk']);
-            unset($data['factory_id']);
-            $order->update($data);
+            if(!$order->rela){
+                $order->rela = user()->id;
+            }
+            $order->save();
             if ($orderArray != $order->getAttributes()) {
                 foreach ($order->getAttributes() as $key => $value) {
                     if ($orderArray[$key] != $value) {
@@ -246,7 +222,7 @@ class OrderController extends Controller
                             OrderUpdateLog::create([
                                 'order_id' => $order->id,
                                 'type' => $key,
-                                'from' => $orderArray[$key],
+                                'from' => $orderArray[$key], 
                                 'to' => $value,
                                 'user_id' => user()->id,
                                 'created_at' => now(),
@@ -254,28 +230,6 @@ class OrderController extends Controller
                         }
                     }
                 }
-            }
-            if ($request->has('thu_them') && $request->thu_them != 0) {
-                if ($request->has('bank_account_id')) {
-                    $dataOdl = [
-                        'order_id' => $order->id,
-                        'amount' => $request->thu_them,
-                        'bank_account_id' => $request->bank_account_id,
-                        'user_id' => user()->id,
-                        'note' => $request->input('note_giao_dich', ''),
-                    ];
-                    if ($request->thu_them >= 0) {
-                        $dataOdl['status'] = 2;
-                    } else {
-                        $dataOdl['status'] = 1;
-                    }
-                    $ol = OrderLogs::create($dataOdl);
-                    $orderAfter = new OrderLogController;
-                    $orderAfter->afterStore($ol);
-                }
-            }else{
-                $orderAfter = new OrderLogController;
-                $orderAfter->checkOrder($order);
             }
             Manager::commit();
         } catch (ModelNotFoundException $e) {

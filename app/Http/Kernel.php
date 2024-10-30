@@ -1,5 +1,6 @@
 <?php namespace App\Http;
 
+use App\Http\Middleware\AuthApiMiddleware;
 use AsfyCode\Container\Container;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\AuthXuong;
@@ -34,6 +35,7 @@ class Kernel
         ],
     ];
     protected $middlewareAliases = [
+        'auth' => AuthApiMiddleware::class,
         'auth.thietke' => AuthMiddleware::class,
         'auth.xuong' => AuthXuong::class
     ];

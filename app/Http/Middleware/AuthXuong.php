@@ -13,7 +13,7 @@ class AuthXuong extends Middleware
 {
     use GoogleClient;
     private $login;
-    private $roles = [7];
+    private $roles = [1,7];
     public function __construct()
     {
         $this->login = new LoginController();

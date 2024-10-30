@@ -25,6 +25,7 @@ use App\Http\Controllers\API\{
     TransactionController,
     UnitController,
 };
+use App\Http\Controllers\API\ThietKe\DesignController;
 use App\Http\Controllers\OrderLogController;
 use AsfyCode\Utils\Route;
 
@@ -48,7 +49,7 @@ Route::post('customers-status',[CustomerController::class,'updateStatus']);
 Route::names('categories')->apiResource('categories',CategoryController::class);
 Route::names('orders')->apiResource('orders',OrderController::class);
 Route::post('orders-status',[OrderController::class,'updateStatus']);
-Route::names('order-logs')->apiResource('order-logs',OrderLogController::class);
+Route::post('design-status',[DesignController::class,'status']);
 Route::names('order-files')->apiResource('order-files',OrderFileController::class);
 Route::names('order-update-logs')->apiResource('order-update-logs',OrderUpdateLogController::class);
 Route::apiResource('order-expenses',OrderExpenseController::class);

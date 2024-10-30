@@ -493,7 +493,7 @@ class RequestServer {
 
         let params = {};
         if (!this.init) {
-            params = {...this.params,...this.getParams()};
+            params = this.getParams();
         } else {
             params = this.params;
         }
@@ -502,13 +502,6 @@ class RequestServer {
                 if (params[i].trim() === '') {
                     delete params[i];
                 }
-            }
-        }
-        if(!params.dates){
-            const datesCookie = document.cookie.split('; ').find(row => row.startsWith('dates='));
-            if (datesCookie) {
-                const datesValue = datesCookie.split('=')[1];
-                params['dates'] = datesValue;
             }
         }
 
@@ -578,11 +571,7 @@ class RequestServer {
 
     setParams(data) {
         const urlParams = new URLSearchParams(data.params);
-        const dates = urlParams.get('dates');
-        if (dates) {
-            document.cookie = `dates=${dates}; path=/;`;
-            urlParams.delete('dates');
-        }
+       
         const page = urlParams.get('page');
         if(page == 1){
             urlParams.delete('page');
@@ -772,12 +761,31 @@ class Status {
     static order_log(status) {
         if (status == 1) {
             return `<span class='badge fs-10 bg-primary-subtle text-primary-emphasis'>Chưa duyệt</span>`;
-        } else if (status == 2) {
+        }else if(status == 2){
             return `<span class='badge fs-10 bg-success-subtle text-success-emphasis'>Đã duyệt</span>`;
         }
         return `<span class='badge fs-10 bg-danger-subtle text-danger-emphasis'>Đã hủy</span>`;
     }
+    static transaction_type(status) {
+        if (status == 1) {
+            return `<span class='badge fs-10 bg-success-subtle text-success-emphasis'>Thu</span>`;
+        }else if(status == 2){
+            return `<span class='badge fs-10 bg-primary-subtle text-primary-emphasis'>Chi</span>`;
+        }
+        return `<span class='badge fs-10 bg-warning-subtle text-warning-emphasis'>Khác</span>`;
+    }
+    static roll_type(status) {
+        if (status == 1) {
+            return `<span class='badge fs-10 bg-success-subtle text-success-emphasis'>Phụ cấp</span>`;
+        }else if(status == 2){
+            return `<span class='badge fs-10 bg-primary-subtle text-primary-emphasis'>Lương phụ</span>`;
+        }else if(status == 3){
+            return `<span class='badge fs-10 bg-warning-subtle text-warning-emphasis'>Chi phí trừ</span>`;
+        }
+        return `<span class='badge fs-10 bg-danger-subtle text-danger-emphasis'>Chi phí bị trừ</span>`;
+    }
 }
+
 
 class Log {
     static danger(text) {
@@ -813,7 +821,7 @@ class VN {
                 value: item.id
             });
         });
-        province.setChoices(data, 'value', 'label', true);
+        province.setChoices(data,'value','label',true);
         province.setChoiceByValue('');
 
         province.passedElement.element.addEventListener('change', async (e) => {
@@ -828,7 +836,7 @@ class VN {
                     value: item.id
                 });
             });
-            district.setChoices(data, 'value', 'label', true);
+            district.setChoices(data,'value','label',true);
             district.setChoiceByValue('');
             ward.setChoiceByValue('');
             removeAllValidationClasses(district.passedElement.element.closest('.form-floating'))
@@ -847,12 +855,12 @@ class VN {
                     value: item.id
                 });
             });
-            ward.setChoices(data, 'value', 'label', true);
+            ward.setChoices(data,'value','label',true);
             ward.setChoiceByValue('');
             removeAllValidationClasses(ward.passedElement.element.closest('.form-floating'))
         });
     }
-    static async show(data, modal) {
+    static async show(data,modal){
         let province_id = data.province_id;
         let province = modal.choices.province_id;
         let provinceData = await axios.get(`/api/vn/provinces`).then(res => res.data);
@@ -867,8 +875,8 @@ class VN {
                 selected: item.id == province_id
             });
         });
-        province.setChoices(dataProvince, 'value', 'label', true);
-
+        province.setChoices(dataProvince,'value','label',true);
+        
         let district = modal.choices.district_id;
         let district_id = data.district_id;
 
@@ -884,8 +892,8 @@ class VN {
                 selected: item.id == district_id
             });
         });
-        district.setChoices(dataDistrict, 'value', 'label', true);
-
+        district.setChoices(dataDistrict,'value','label',true);
+        
         let ward = modal.choices.ward_id;
         let ward_id = data.ward_id;
         let wardData = await axios.get(`/api/vn/wards/${district_id}`).then(res => res.data);
@@ -900,7 +908,7 @@ class VN {
                 selected: item.id == ward_id
             });
         });
-        ward.setChoices(dataWard, 'value', 'label', true);
+        ward.setChoices(dataWard,'value','label',true);
     }
 }
 

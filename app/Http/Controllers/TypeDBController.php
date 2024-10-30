@@ -23,6 +23,7 @@ class TypeDBController extends Controller{
         'district_id' => 'Quận huyện',
         'ward_id' => 'Thị xã',
         'address' => 'Địa chỉ',
+        'current_status' => 'Trạng thái',
         'du_kien' => 'Doanh thu dự kiến',
         'finish_at' => 'Ngày hoàn thành',
         'du_kien_time' => 'Thời gian dự kiến',
@@ -58,6 +59,6 @@ class TypeDBController extends Controller{
         $this->order_customer = CustomerStatus::where('type',1)->first()->id;
         $this->order_success = OrderStatus::where('type',1)->where('type_data',1)->first()->id;
         $this->order_done = [$this->order_success,$this->order_back];
-        $this->order = OrderStatus::orderBy('sort','asc')->where('type_data',1)->where('type','!=',1)->get();
+        $this->order = OrderStatus::orderBy('sort','asc')->where('type_data',2)->get();
     }
 }
