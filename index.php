@@ -24,7 +24,6 @@ $routeServiceProvider->boot();
 // Đăng ký dịch vụ cho website
 $appServiceProvider = new AppServiceProvider();
 $appServiceProvider->register($container);
-
 // Khởi tạo Kernel
 $kernel = $container->make(Kernel::class);
 // Khởi tạo Request

@@ -23,7 +23,8 @@ class RouteServiceProvider
         // Đăng ký routes cho web
         Route::middleware('web')->group(function(){
             $host = $this->request->host();
-            $this->redirectRoute($host);
+            $path = $this->redirectRoute($host);
+            require_once $path;
         });
 
         // Đăng ký routes cho API
@@ -34,9 +35,12 @@ class RouteServiceProvider
 
     public function redirectRoute($host){
         $routes = $this->routes;
-        foreach($routes as $key => $view){
+        for($i = 0; $i < count($routes); $i++){
+            $keys = array_keys($routes);
+            $key = $keys[$i];
+            $view = $routes[$key];
             if($key == $host){
-                require_once BASE_PATH . '/routes/'.$view.'.php';
+                return BASE_PATH . '/routes/'.$view.'.php';
             }
         }
     }

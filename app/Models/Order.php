@@ -37,6 +37,9 @@
         public function user_tk(){
             return $this->belongsTo(User::class,'rela');
         }
+        public function xuong(){
+            return $this->belongsTo(Factory::class,'rela');
+        }
         public function order_logs() {
             return $this->hasMany(OrderLogs::class, 'order_id', 'id');
         }

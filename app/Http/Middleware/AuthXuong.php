@@ -13,7 +13,7 @@ class AuthXuong extends Middleware
 {
     use GoogleClient;
     private $login;
-    private $roles = [1,7];
+    private $roles = [1,7,8];
     public function __construct()
     {
         $this->login = new LoginController();
@@ -29,7 +29,7 @@ class AuthXuong extends Middleware
                 $user = User::find($user_id);
                 if ($user) {
                     if ($user->status != 1) {
-                        session(true)->set('error', 'Tài khoản không có quyền truy cập!');
+                        session(true)->set('error', 'Tài khoản không có quyền truy cập! 3');
                         $this->login->logout();
                     } else {
                         if ($this->checkRoles($user->id,$this->roles)) {
@@ -37,7 +37,7 @@ class AuthXuong extends Middleware
                             $user->last_active = now();
                             $user->save();
                         } else {
-                            session(true)->set('error', 'Tài khoản không có quyền truy cập!');
+                            session(true)->set('error', 'Tài khoản không có quyền truy cập! 4');
                             $this->login->logout();
                         }
                     }

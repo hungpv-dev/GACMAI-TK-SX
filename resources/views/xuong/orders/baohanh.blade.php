@@ -1,7 +1,7 @@
-@extends('layouts.thietke')
+@extends('layouts.xuong')
 
 @section('title')
-    Đơn hàng thiết kế
+    Đơn hàng bảo hành
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
                 <li class="breadcrumb-item">Đơn hàng</li>
             </ol>
         </nav>
-        <h3 class="text-bold text-body-emphasis mb-5">Danh sách đơn hàng thiết kế</h3>
+        <h3 class="text-bold text-body-emphasis mb-5">Danh sách đơn hàng bảo hành</h3>
         <div>
             <div class="mb-3 thongke">
 
@@ -21,36 +21,9 @@
             <div id="searchModel" class="d-none">
                 <form class="d-flex align-items-center gap-3 flex-wrap mb-4" id="filter-form">
                     <div>
-                        <input type="text" name="dates" class="form-control value empty">
-                    </div>
-                    <div>
-                        <select name="customer_id" class="form-select value empty choice">
-                            <option value="">Khách hàng</option>
-                            @foreach ($customersSearch as $item)
-                                <option value="{{ $item->id }}">{{ $item->phone }} - {{ $item->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div>
                         <select name="city_id" class="form-select value empty choice">
                             <option value="">Khu vực</option>
                             @foreach ($provinces as $item)
-                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div>
-                        <select name="type_status" class="form-select value empty choice">
-                            <option value="">Trạng thái thiết kế</option>
-                            @foreach ($statusOrder as $item)
-                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div>
-                        <select name="user_id" class="form-select value empty choice">
-                            <option value="">Nhân sự thiết kế</option>
-                            @foreach ($usertk as $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                             @endforeach
                         </select>
@@ -83,9 +56,7 @@
                                 <th class="align-middle text-start text-uppercase">Tên khách hàng</th>
                                 <th class="align-middle text-start text-uppercase">Địa chỉ</th>
                                 <th class="align-middle text-start text-uppercase">Trạng thái</th>
-                                <th class="align-middle text-start text-uppercase">Sản phẩm</th>
-                                <th class="align-middle text-start text-uppercase">Thời gian dự kiến</th>
-                                <th class="align-middle text-start text-uppercase">Nhân sự thiết kế</th>
+                                <th class="align-middle text-start text-uppercase">Lịch bảo hành</th>
                                 <th class="align-middle text-start text-uppercase">Ghi chú</th>
                                 <th class="align-middle text-center text-uppercase">Thao tác</th>
                             </tr>
@@ -169,14 +140,14 @@
                             </div>
                             <div class="col-sm-12 col-md-6">
                                 <div class="form-floating">
-                                    <select name="current_status" class="form-select choice value validate"
-                                        title="Trạng thái thiết kế">
+                                    <select name="status_id" class="form-select choice value validate"
+                                        title="Trạng thái bảo hành">
                                         <option value="">Chọn trạng thái</option>
-                                        @foreach (status('order') as $item)
+                                        @foreach ($status as $item)
                                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                                         @endforeach
                                     </select>
-                                    <label class="floating-label-cus">Trạng thái thiết kế</label>
+                                    <label class="floating-label-cus">Trạng thái bảo hành</label>
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-6">
@@ -185,18 +156,6 @@
                                         data-options='{"minDate":"today","dateFormat":"d-m-Y", "locale": "vn", "shorthandCurrentMonth": true}'
                                         class="form-control datetimepicker value empty validate">
                                     <label>Thời gian dự kiến</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-12 container-product d-none">
-                                <div class="form-floating">
-                                    <select name="category_id" class="form-select choice value validate"
-                                        title="Sản phẩm">
-                                        <option value="">Chọn sản phẩm</option>
-                                        @foreach ($categories as $item)
-                                            <option value="{{ $item->id }}">{{ $item->name }} - {{ $item->unit->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    <label class="floating-label-cus">Sản phẩm</label>
                                 </div>
                             </div>
                             <div class="col-sm-12 col-md-12">
@@ -229,7 +188,7 @@
 
 @section('script')
     <script>
-        const route = '/api/orders?status=9';
+        const route = '/api/orders?status=13&nosearchdate=true';
         var request = new RequestServer(route);
         var searchModal = new HandleForm('#searchModel');
         request.colspan = 14;
@@ -284,15 +243,13 @@
                     return `
                         <tr class="${request.bold(item.id)}">
                             <td class='align-middle text-center'>${request.index++}</td>
-                            <td class='align-middle text-start'>${item.id}</td>
+                            <td class='align-middle text-start'><a href='/orders/${item.id}'>${item.id}</a></td>
                             <td class='align-middle text-start'>${item.customer.name}</td>
                             <td class='align-middle text-start' style="max-width: 200px;">${item.areas ?? Log.info('Chưa cập nhật')}</td>
                             <td class='align-middle text-start'>
-                                 ${(item.status.id == 9 || item.status.id == 10) ? Status.status(item.current_status) : ''}
+                                ${Status.status(item.status)}
                             </td>
-                            <td class='align-middle text-start'>${item.category?.name ?? Log.info('Chưa có')}</td>
                             <td class='align-middle text-start'>${item.du_kien_time ? dateTimeFormat(item.du_kien_time) + ' - ' + timeView : Log.danger('Chưa có')}</td> 
-                            <td class='align-middle text-start'>${item.user_tk?.name ?? Log.danger('Chưa có')}</td>
                             <td class='align-middle text-start'>${item?.note ?? Log.warning('Chưa có')}</td>
                             <td class='align-middle text-center'>
                                 <div class='position-relative'>
@@ -369,9 +326,8 @@
             if (check) {
                 this.loading(true);
                 let value = this.value().formatPrice(['du_kien', 'thu_them']).get();
-                console.log(value);
                 try {
-                    let res = await axios.put(`/api/orders/${editModel.id}`, value).then(res => res);
+                    let res = await axios.put(`/api/orders-xuong/${editModel.id}`, value).then(res => res);
                     if (res.status == 200) {
                         editModel.reset();
                         editModel.hideModal();
@@ -392,31 +348,5 @@
                 this.loading(false);
             }
         }
-        $(document).on('click', '.redirectHome', async function(e) {
-            let status = $(this).attr('data-status');
-            if (status) {
-                request.params.status = status;
-            } else {
-                delete request.params.status;
-            }
-            await request.get();
-            searchModal.showValue(request.params);
-        })
-
-        editModel.form.querySelector('[name="current_status"]').addEventListener('addItem', function() {
-            let id = parseInt(this.value);
-            let product = editModel.form.querySelector('.container-product');
-            switch (id) {
-                case 18: {
-                    product.classList.remove('d-none');
-                    product.querySelector('select').classList.add('validate');
-                    break;
-                }
-                default: {
-                    product.classList.add('d-none');
-                    product.querySelector('select').classList.remove('validate');
-                }
-            }
-        });
     </script>
 @endsection

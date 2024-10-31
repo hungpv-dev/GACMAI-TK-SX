@@ -27,6 +27,8 @@ use App\Http\Controllers\API\{
 };
 use App\Http\Controllers\API\ThietKe\DesignController;
 use App\Http\Controllers\OrderLogController;
+use App\Http\Controllers\API\Xuong\OrderController as XuongOrderController;
+use App\Http\Controllers\API\Xuong\OrderLogController as XuongOrderLogController;
 use AsfyCode\Utils\Route;
 
 Route::get('/home',[HomeController::class,'index']);
@@ -48,8 +50,13 @@ Route::apiResource('customer-notification',CustomerNotifyController::class);
 Route::post('customers-status',[CustomerController::class,'updateStatus']);
 Route::names('categories')->apiResource('categories',CategoryController::class);
 Route::names('orders')->apiResource('orders',OrderController::class);
+Route::names('order-logs')->apiResource('order-logs',XuongOrderLogController::class);
+Route::get('orders-xuong',[XuongOrderController::class,'index']);
+Route::post('orders-xuong',[XuongOrderController::class,'store']);
+Route::put('orders-xuong/{id}',[XuongOrderController::class,'update']);
 Route::post('orders-status',[OrderController::class,'updateStatus']);
 Route::post('design-status',[DesignController::class,'status']);
+Route::post('xuong-status',[DesignController::class,'statusXuong']);
 Route::names('order-files')->apiResource('order-files',OrderFileController::class);
 Route::names('order-update-logs')->apiResource('order-update-logs',OrderUpdateLogController::class);
 Route::apiResource('order-expenses',OrderExpenseController::class);

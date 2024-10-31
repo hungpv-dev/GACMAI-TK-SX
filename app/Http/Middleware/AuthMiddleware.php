@@ -29,16 +29,15 @@ class AuthMiddleware extends Middleware
                 $user = User::find($user_id);
                 if ($user) {
                     if ($user->status != 1) {
-                        session(true)->set('error', 'Tài khoản không có quyền truy cập!');
+                        session(true)->set('error', 'Tài khoản không có quyền truy cập! 1');
                         $this->login->logout();
                     } else {
                         if ($this->checkRoles($user->id,$this->roles)) {
                             $this->login->setSession($user);
-
                             $user->last_active = now();
                             $user->save();
                         } else {
-                            session(true)->set('error', 'Tài khoản không có quyền truy cập!');
+                            session(true)->set('error', 'Tài khoản không có quyền truy cập! 2');
                             $this->login->logout();
                         }
                     }

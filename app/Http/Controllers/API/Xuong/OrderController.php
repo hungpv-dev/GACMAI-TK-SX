@@ -1,45 +1,27 @@
 <?php
-
-namespace App\Http\Controllers\API;
-
+namespace App\Http\Controllers\API\Xuong;
+use App\Http\Controllers\API\OrderUpdateLogController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\OrderLogController;
 use App\Models\Customer;
 use App\Models\Order;
 use App\Models\OrderLogs;
-use App\Models\OrderStatus;
 use App\Models\OrderUpdateLog;
 use App\Repositories\UserRepository;
 use AsfyCode\Utils\Request;
 use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use PhpOffice\PhpSpreadsheet\Calculation\MathTrig\Exp;
 
-class OrderController extends Controller
-{
-    # [GET] /  =>  Danh sách dữ liệu 
-    public function index(Request $request)
+class OrderController extends Controller{
+    public function index(Request $request,UserRepository $userRepository)
     {   
-        $orders = Order::query();
+        $facIds = $userRepository->checkXuong();
+
+        $orders = Order::query()->whereIn('rela',$facIds);
+
         $dates = currentMonth();
-        if(!$request->has('nosearchdate')){
-            $dates = currentMonth();
-            if ($request->has('dates')) {
-                $dates = $request->dates;
-            } else {
-                $request->merge('dates', $dates);
-            }
-            $dateQuery = getDateQuery($dates);
-            $orders->whereBetween('created_at', $dateQuery);
-            if ($request->has('finish_at')) {
-                $dateSearch = getDateQuery($request->finish_at);
-                $orders->whereBetween('finish_at', $dateSearch);
-            } else {
-                $orders->whereBetween('created_at', $dateQuery);
-            }
-        }
+        
         if ($request->has('city_id')) {
-            $orders->where('city_id', $request->city_id);
+            $orders->where('province_id', $request->city_id);
         }
         if ($request->has('expried')) {
             $orders->where('du_kien_time','<', now());
@@ -73,7 +55,7 @@ class OrderController extends Controller
 
         $orders->with([
             'customer:id,name',
-            'user_tk',
+            'xuong',
             'current_status',
             'status',
             'category'
@@ -88,9 +70,7 @@ class OrderController extends Controller
         return $this->sendResponse($response);
     }
 
-    # [POST] /create  =>  Thực thi thêm dữ liệu 
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         $validate = $request->validate(
             [
                 'customer_id' => 'required',
@@ -112,14 +92,8 @@ class OrderController extends Controller
         if ($validate->fails()) {
             return $this->sendResponse($errors, 422);
         }
-        // if (!Customer::where('id', $request->customer_id)->where('status_id', status('order_customer'))->exists()) {
-        //     $errors['customer_id'][] = 'Khách hàng chưa xác nhận!';
-        //     return $this->sendResponse($errors, 422);
-        // }
-        $customer = Customer::findOrFail($request->customer_id);
-        $customer->status_id = status('order_customer');
-        $customer->save();
-        try{
+        try {
+            $customer = Customer::findOrFail($request->customer_id);
             Manager::beginTransaction();
             $dataOrder = [
                 'customer_id' => $request->customer_id,
@@ -129,100 +103,70 @@ class OrderController extends Controller
                 'address' => $request->address,
                 'du_kien' => $request->du_kien,
                 'du_kien_time' => formatDate($request->du_kien_time),
-                'thuc_thu' => 0,
+                'thuc_thu' => $request->thuc_thu,
                 'note' => $request->input('note'),
                 'status_id' => $request->status_id,
-                'user_id' => user()->id,
+                'user_id' => $request->user_id,
             ];
-            if($request->status_id == status('order_success')){
-                $dataOrder['finish_at'] = now();
-                $customer = Customer::findOrFail($request->customer_id);
-                $customer->update([
-                    'status_id' => status('customer_success')
-                ]);
-            }
-            if($request->status_id == 9){
-                $dataOrder['rela'] = $request->input('user_tk',NULL);
-                $dataOrder['current_status'] = 16;
-            }else if($request->status_id == 10){
+            if($request->status_id == 10){
                 $dataOrder['rela'] = $request->input('factory_id',NULL);
                 $dataOrder['current_status'] = 19;
             }
             $order = Order::create($dataOrder);
-            if($request->input('status_id') == status('order_back')){
-                $order->finish_at = now();
-                $order->save();
-            }
-            if($request->has('thuc_thu') && $request->thuc_thu != 0){
-                if($request->has('bank_account_id')){
-                    $dataOdl = [
-                        'order_id' => $order->id,
-                        'amount' => $request->thuc_thu,
-                        'bank_account_id' => $request->bank_account_id,
-                        'user_id' => user()->id,
-                        'note' => $request->input('note_giao_dich',''),
-                    ];
-                    if($request->thuc_thu >= 0){
-                        $dataOdl['status'] = 2;
-                    }else{
-                        $dataOdl['status'] = 1;
-                    }
-                    $ol = OrderLogs::create($dataOdl);
-                    $orderAfter = new OrderLogController;
-                    $orderAfter->afterStore($ol);
-                }
-            }
             Manager::commit();
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             Manager::rollBack();
             return $this->sendResponse([
                 'message' => 'Thêm đơn hàng thất bại!'
             ], 400);
         }
+
+        user_logs('Thêm mới đơn hàng!');
         return $this->sendResponse([
             'id' => $order->id,
             'message' => 'Thêm đơn hàng thành công!'
         ], 201);
     }
 
-    # [GET] /{id}  =>  Xem thông tin một bản ghi 
-    public function show($id)
-    {
-        try {
-            $order = Order::with('customer')->findOrFail($id);
-            return $this->sendResponse($order);
-        } catch (ModelNotFoundException $e) {
-            return $this->sendResponse([
-                'message' => 'Không tìm thấy đơn hàng'
-            ], 404);
-        }
-    }
-
     # [PUT] /update/{id}  =>  Hiển thị form cập nhật 
     public function update($id, Request $request)
     {
+        $validate = $request->validate(
+            [
+                'customer_id' => 'required',
+                'province_id' => 'required',
+                'district_id' => 'required',
+                'status_id' => 'required',
+            ],
+            [],
+            [
+                'customer_id' => 'Khách hàng',
+                'province_id' => 'Tỉnh thành',
+                'district_id' => 'Quận huyện',
+                'status_id' => 'Trạng thái',
+            ]
+        );
+        $errors = $validate->errors();
+        if ($validate->fails()) {
+            return $this->sendResponse($errors, 422);
+        }
         try {
             Manager::beginTransaction();
             $order = Order::findOrFail($id);
-            $orderArray = $order->getAttributes();
-            $order->current_status = $request->current_status;
-            if($request->current_status == 18){
-                $order->category_id = $request->category_id;
-            }else{
-                $order->category_id = NULL;
-            }
-            if(!$order->rela){
-                $order->rela = user()->id;
-            }
-            if($request->current_status == 19){
-                $order->rela = optional(user()->factory)->id ?? 0;
+            if(in_array($request->input('status_id'),[status('order_done')])){
+                if($order->status_id != 13){
+                    $order->finish_at = now();
+                }
             }
             $order->save();
+
+            $orderArray = $order->getAttributes();
+            $order->update(['status_id' => $request->status_id]);
             if ($orderArray != $order->getAttributes()) {
                 foreach ($order->getAttributes() as $key => $value) {
                     if ($orderArray[$key] != $value) {
                         if (isset(status('orderLogType')[$key])) {
-                            $from = !is_null($orderArray[$key]) ? $orderArray[$key] : 0;
+                            $from = is_null($orderArray[$key]) ? $orderArray[$key] : 0;
                             OrderUpdateLog::create([
                                 'order_id' => $order->id,
                                 'type' => $key,
@@ -251,31 +195,5 @@ class OrderController extends Controller
             'id' => $order->id,
             'message' => 'Cập nhật đơn hàng thành công'
         ]);
-    }
-
-    public function updateStatus(Request $request)
-    {
-        $listIds = [];
-        foreach ($request->all() as $value) {
-            if ($value['id']) {
-                $status = OrderStatus::where('type_data',1)->find($value['id']);
-            } else {
-                $status = new OrderStatus();
-            }
-            $status->name = $value['name'];
-            if ($value['type'] && $value['type'] != 'null') {
-                $status->type = $value['type'];
-            }
-            $status->sort = $value['sort'];
-            $status->color = $value['color'];
-            $status->bg = $value['bg'];
-            $status->save();
-            $listIds[] = $status->id;
-        }
-        OrderStatus::whereNotIn('id', $listIds)->where('type_data',1)->delete();
-        return $this->sendResponse([
-            'data' => $request->all(),
-            'message' => 'Cập nhật trạng thái thành công!'
-        ], 200);
     }
 }

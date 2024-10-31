@@ -6,10 +6,12 @@ use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Factory;
 use App\Models\Group;
+use App\Models\Order;
 use App\Models\OrderStatus;
 use App\Models\Province;
 use App\Models\User;
 use AsfyCode\Utils\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class OrderController extends Controller{
     public function index(){
@@ -26,5 +28,7 @@ class OrderController extends Controller{
         $usertk = $users->where('role_id',6);
         return view("thietke.orders.index",compact('factories','categories','usertk','provinces','groups','statusOrder','customersSearch','users','customers','account'));
     }
+
+
     
 }

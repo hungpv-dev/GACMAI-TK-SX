@@ -33,6 +33,7 @@ class TypeDBController extends Controller{
      ];
 
     public $order;
+    public $order_xuong;
 
     // order_customer => 'Khách hàng được phép tạo tk';
     public $order_customer; 
@@ -60,5 +61,6 @@ class TypeDBController extends Controller{
         $this->order_success = OrderStatus::where('type',1)->where('type_data',1)->first()->id;
         $this->order_done = [$this->order_success,$this->order_back];
         $this->order = OrderStatus::orderBy('sort','asc')->where('type_data',2)->get();
+        $this->order_xuong = OrderStatus::orderBy('sort','asc')->where('type_data',3)->get();
     }
 }

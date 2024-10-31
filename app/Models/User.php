@@ -45,4 +45,9 @@ class User extends Eloquent
     public function transactions(){
         return $this->hasMany(Transaction::class);
     }
+
+    
+    public function checkAdminXuong(){
+        return in_array($this->role_id,[1,8]);
+    }
 }

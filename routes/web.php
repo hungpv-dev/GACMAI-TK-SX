@@ -20,5 +20,6 @@ Route::middleware('auth.thietke')->group(function(){
     Route::get('/design-status',[DesignController::class,'status']);
     Route::prefix('orders')->names('orders')->group(function () {
         Route::get('/', [OrderController::class, 'index'])->name('index');
+        Route::get('/{id}', [OrderController::class, 'show'])->name('show');
     });
 });

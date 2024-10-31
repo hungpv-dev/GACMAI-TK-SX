@@ -5,6 +5,7 @@ use App\Http\Controllers\WEB\StatusCustomer;
 use App\Models\Customer;
 use App\Models\CustomerNotify;
 use App\Models\CustomerStatus;
+use App\Models\Factory;
 use App\Models\User;
 use DateTime;
 use Illuminate\Database\Capsule\Manager;
@@ -73,5 +74,16 @@ class UserRepository extends Controller
         $status = CustomerStatus::find(status('customer_schelude'));
         $status->count_old = $customer;
         return $status;
+    }
+
+    public function checkXuong(){
+        $user = user();
+        $factories = Factory::all();
+        if(in_array($user->role_id,[1,8])){
+            $factoriesIds = $factories->pluck('id');
+        }else{
+            $factoriesIds = [$user->factory->id];
+        }
+        return $factoriesIds;
     }
 }
