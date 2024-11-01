@@ -4,6 +4,17 @@ Trang chủ
 @endsection
 @section('content')
 <div class="content">
+    <div class="mb-5">
+        <div class="alert alert-outline-warning d-flex align-items-center" role="alert">
+            <span class="fas fa-info-circle text-warning fs-5 me-3"></span>
+            <p class="mb-0 flex-1">
+                <a href="/orders?type_status=16" class="text-warning">
+                    <span class='text-primary fw-bold'>Có <span class='text-danger fw-bold'>{{ status('count_start_tk') }}</span> đơn mới!
+                </a>
+            </p>
+            <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
     <h2 class='mb-5'>Báo cáo tổng quan</h2>
     <div class="row-config my-5">
         <div

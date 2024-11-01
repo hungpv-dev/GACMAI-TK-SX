@@ -104,7 +104,6 @@
             </li>
             <li class="nav-item dropdown">
                 @php
-                $dt = app()->make('App\Repositories\UserRepository')->customerExpired();
                 $status = app()->make('App\Repositories\UserRepository')->customerSchedule();
                 if($status > 0){
                     $dt[] = $status;

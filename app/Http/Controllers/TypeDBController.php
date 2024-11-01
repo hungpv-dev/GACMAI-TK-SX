@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\CustomerStatus;
+use App\Models\Order;
 use App\Models\OrderStatus;
 
 class TypeDBController extends Controller{
@@ -46,6 +47,8 @@ class TypeDBController extends Controller{
 
      
      public $order_done;
+     public $count_start_tk;
+     public $count_start_xuong;
 
 
     //  customer_schelude => Trạng thái khách hẹn lịch
@@ -58,8 +61,11 @@ class TypeDBController extends Controller{
     public function __construct(){
         $this->customer_success = CustomerStatus::where('type',2)->first()->id;
         $this->order_customer = CustomerStatus::where('type',1)->first()->id;
+        $this->count_start_tk = Order::where('current_status',16)->where('status_id',9)->count();
+        $this->count_start_xuong = Order::where('current_status',19)->where('status_id',10)->count();
         $this->order_success = OrderStatus::where('type',1)->where('type_data',1)->first()->id;
         $this->order_done = [$this->order_success,$this->order_back];
+
         $this->order = OrderStatus::orderBy('sort','asc')->where('type_data',2)->get();
         $this->order_xuong = OrderStatus::orderBy('sort','asc')->where('type_data',3)->get();
     }

@@ -21,9 +21,6 @@
             <div id="searchModel" class="d-none">
                 <form class="d-flex align-items-center gap-3 flex-wrap mb-4" id="filter-form">
                     <div>
-                        <input type="text" name="dates" class="form-control value empty">
-                    </div>
-                    <div>
                         <select name="customer_id" class="form-select value empty choice">
                             <option value="">Khách hàng</option>
                             @foreach ($customersSearch as $item)
@@ -229,7 +226,7 @@
 
 @section('script')
     <script>
-        const route = '/api/orders?status=9';
+        const route = '/api/orders?status=9&nosearchdate=true';
         var request = new RequestServer(route);
         var searchModal = new HandleForm('#searchModel');
         request.colspan = 14;

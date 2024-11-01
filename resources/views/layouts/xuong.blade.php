@@ -90,7 +90,73 @@
                             data-feather="sun"></span></label>
                 </div>
             </li>
-            <li class="nav-item dropdown"></li>
+            <li class="nav-item dropdown">
+                @php
+                $status = status('count_start_xuong');
+                @endphp
+                @if($status > 0)
+                <a class="nav-link notification-bell show position-relative" href="#" style="min-width: 2.25rem"
+                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    data-bs-auto-close="outside">
+                    <span data-feather="bell" id='bell-icon' style="height:20px;width:20px;"></span>
+                    <span style='
+                        background-color: red;
+                        top: 0;
+                        font-size: 0.9rem;
+                        text-align:center;
+                        color: white;
+                        height:20px !important;
+                        width:20px !important;
+                        border-radius:50%;
+                        right: 0;
+                        position: absolute;
+                    '>{{ $status }}</span>
+                </a>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const notificationBell = document.querySelector('#bell-icon');
+                        notificationBell.classList.add('shake');
+                    });
+                </script>
+                <div class="dropdown-menu dropdown-menu-end notification-dropdown-menu py-0 shadow border navbar-dropdown-caret"
+                    id="navbarDropdownNotfication" aria-labelledby="navbarDropdownNotfication">
+                    <div class="card position-relative border-0">
+                        <div class="card-header p-2">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="text-body-emphasis mb-0">Đơn mới</h5>
+                            </div>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="scrollbar-overlay">
+                                <a href='/orders?type_status=19'
+                                    style="display: block;text-decoration: none"
+                                    class="px-2 px-sm-3 pt-3 pb-1 notification-card position-relative unread border-bottom">
+                                    <div class="d-flex align-items-center justify-content-between position-relative">
+                                        <div class="d-flex">
+                                            <div class="avatar avatar-m status-online me-3">
+                                                <div class="avatar-name rounded-circle d-flex justify-content-center align-items-center"
+                                                    style="background-color: {{ $item->bg }};color: {{ $item->color }}">
+                                                    <span class='fas fa-bell'></span>
+                                                </div>
+                                            </div>
+                                            <div class="flex-1 me-sm-3">
+                                                <h4 class="fs-9 text-body-emphasis">
+                                                    <span>Đơn mới</span>
+                                                </h4>
+                                                <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
+                                                        class='me-1 fs-10'>📅</span><span style='color: red'
+                                                        class='fw-bold'>{{ $status }}</span> đơn mới
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
+            </li>
             <li class="nav-item dropdown"><button class="nav-link lh-1 pe-0" id="navbarDropdownUser"
                     data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-l ">
